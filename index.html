@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Form &amp; Validation | Session 13</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Build a Register Form</h1>
+      <p>
+        Every rule you see below (red border, checklist ticks, disabled button)
+        is plain JavaScript reacting to what you type. Open
+        <code>script.js</code> to see how.
+      </p>
+    </header>
+
+    <main>
+      <form id="register-form" class="register-form" novalidate>
+        <!-- Full name -->
+        <div class="field">
+          <label for="fullname">Full name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Jane Doe"
+            autocomplete="name"
+          />
+          <p class="error-msg" id="fullname-error"></p>
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="jane@example.com"
+            autocomplete="email"
+          />
+          <p class="error-msg" id="email-error"></p>
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Create a password"
+            autocomplete="new-password"
+          />
+          <ul class="password-rules" id="password-rules">
+            <li id="rule-length" class="rule ">At least 8 characters</li>
+            <li id="rule-upper" class="rule">One uppercase letter</li>
+            <li id="rule-number" class="rule">One number</li>
+          </ul>
+        </div>
+
+        <!-- Confirm password -->
+        <div class="field">
+          <label for="confirm-password">Confirm password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Repeat your password"
+            autocomplete="new-password"
+          />
+          <p class="error-msg" id="confirm-password-error"></p>
+        </div>
+
+        <!-- Age -->
+        <div class="field">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" placeholder="18" />
+          <p class="error-msg" id="age-error"></p>
+        </div>
+
+        <!-- Terms -->
+        <div class="field field-checkbox">
+          <input type="checkbox" id="terms" name="terms" />
+          <label for="terms">I agree to the terms and conditions</label>
+          <p class="error-msg" id="terms-error"></p>
+        </div>
+
+        <button type="submit" id="submit-btn" class="submit-btn" disabled>
+          Create account
+        </button>
+
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        Session 13 &middot; JavaScript &mdash; Register Form &amp; Validation
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

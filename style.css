@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 3rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  background: #f5f5f7;
+  color: #1d1d1f;
+}
+
+.page-header {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 0 1rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.page-header p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.page-header code {
+  background: #1d1d1f;
+  color: #7dd3fc;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.register-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field input[type="text"],
+.field input[type="password"],
+.field input[type="number"] {
+  padding: 0.65rem 0.75rem;
+  border: 2px solid #d2d2d7;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* JS toggles these two classes once a field has been checked */
+.field input.valid {
+  border-color: #22c55e;
+}
+
+.field input.invalid {
+  border-color: #ef4444;
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin: 0;
+  min-height: 1em;
+}
+
+.field-checkbox {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.field-checkbox label {
+  font-weight: 500;
+}
+
+.field-checkbox .error-msg {
+  flex-basis: 100%;
+}
+
+/* ---------- Password checklist ---------- */
+.password-rules {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rule {
+  font-size: 0.8rem;
+  color: #86868b;
+  padding-left: 1.3rem;
+  position: relative;
+}
+
+.rule::before {
+  content: "\2717"; /* cross */
+  position: absolute;
+  left: 0;
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.rule.met {
+  color: #22c55e;
+}
+
+.rule.met::before {
+  content: "\2713"; /* check */
+  color: #22c55e;
+}
+
+.submit-btn {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.submit-btn:not(:disabled):hover {
+  background: #2563eb;
+}
+
+.form-status {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-height: 1.2em;
+  margin: 0;
+}
+
+.form-status.success {
+  color: #22c55e;
+}
+
+.page-footer {
+  max-width: 480px;
+  margin: 3rem auto 0;
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+}
